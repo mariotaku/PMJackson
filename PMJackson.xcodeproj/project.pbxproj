@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22664BA6476B546BF59807F3 /* Pods_PMJackson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D1B68D7CCB486CC567067 /* Pods_PMJackson.framework */; };
 		9E1B244B1BC73D7600E5BC19 /* PMJackson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1B24411BC73D7600E5BC19 /* PMJackson.framework */; };
 		CE2A7FBB1EB6E9CA003791F2 /* PMJackson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A7FBA1EB6E9CA003791F2 /* PMJackson.swift */; };
+		CE2A7FC31EB70D4B003791F2 /* PMJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		215CEE53632C5CC3CAA56B72 /* Pods-PMJackson.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMJackson.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMJackson/Pods-PMJackson.release.xcconfig"; sourceTree = "<group>"; };
+		257D1B68D7CCB486CC567067 /* Pods_PMJackson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMJackson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F8F199AE7CF9CFB6AB19F25 /* Pods-PMJackson.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMJackson.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMJackson/Pods-PMJackson.debug.xcconfig"; sourceTree = "<group>"; };
 		9E1B24411BC73D7600E5BC19 /* PMJackson.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMJackson.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1B24451BC73D7600E5BC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E1B244A1BC73D7600E5BC19 /* PMJacksonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMJacksonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +35,7 @@
 		9E49DEF31C1F9E2F004FDCAD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9E69BE0B1C6E843D00D92762 /* LICENSE-APACHE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-APACHE"; sourceTree = "<group>"; };
 		CE2A7FBA1EB6E9CA003791F2 /* PMJackson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMJackson.swift; sourceTree = "<group>"; };
+		CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMJSON.framework; path = Pods/../build/Debug/PMJSON/PMJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2A7FC31EB70D4B003791F2 /* PMJSON.framework in Frameworks */,
+				22664BA6476B546BF59807F3 /* Pods_PMJackson.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A8FF57F1BA4E64C34D0FE63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */,
+				257D1B68D7CCB486CC567067 /* Pods_PMJackson.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9E1B24271BC73D1900E5BC19 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +77,8 @@
 				9E1B24421BC73D7600E5BC19 /* Sources */,
 				9E1B244E1BC73D7600E5BC19 /* Tests */,
 				9E1B24341BC73D3600E5BC19 /* Products */,
+				DBCCC0CF08AB97E7A691B1B9 /* Pods */,
+				6A8FF57F1BA4E64C34D0FE63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +108,15 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		DBCCC0CF08AB97E7A691B1B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F8F199AE7CF9CFB6AB19F25 /* Pods-PMJackson.debug.xcconfig */,
+				215CEE53632C5CC3CAA56B72 /* Pods-PMJackson.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -106,10 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E1B24521BC73D7600E5BC19 /* Build configuration list for PBXNativeTarget "PMJackson" */;
 			buildPhases = (
+				7CBC9566A5CC9BE9F0004D37 /* [CP] Check Pods Manifest.lock */,
 				9E1B243C1BC73D7600E5BC19 /* Sources */,
 				9E1B243D1BC73D7600E5BC19 /* Frameworks */,
 				9E1B243E1BC73D7600E5BC19 /* Headers */,
 				9E1B243F1BC73D7600E5BC19 /* Resources */,
+				716EE99929AAC157CBF942B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +222,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		716EE99929AAC157CBF942B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PMJackson/Pods-PMJackson-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CBC9566A5CC9BE9F0004D37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9E1B243C1BC73D7600E5BC19 /* Sources */ = {
@@ -278,6 +341,7 @@
 		};
 		9E1B24531BC73D7600E5BC19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F8F199AE7CF9CFB6AB19F25 /* Pods-PMJackson.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -305,6 +369,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug/PMJSON",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -339,6 +407,7 @@
 		};
 		9E1B24541BC73D7600E5BC19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 215CEE53632C5CC3CAA56B72 /* Pods-PMJackson.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -366,6 +435,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug/PMJSON",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

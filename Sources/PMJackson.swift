@@ -143,7 +143,7 @@ public extension JSONEvent {
         }
     }
     
-    public func asDoublent64(_ def: Double? = nil) -> Int64! {
+    public func asDouble64(_ def: Double? = nil) -> Double! {
         switch self {
         case .stringValue(let v):
             return Double(v) ?? def
