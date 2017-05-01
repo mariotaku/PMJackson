@@ -2,11 +2,10 @@ import PMJSON
 
 public class PMJacksonParser {
     
-    
     public private(set) var currentEvent: JSONEvent?
     
     /**
-     * Get the name associated with the current token: 
+     * Get the name associated with the current token:
      * for field names it will be the same as what `currentEvent.asString()` returns;
      * for field values it will be preceding field name;
      * and for others (array values, root-level values) null.
@@ -19,11 +18,11 @@ public class PMJacksonParser {
     private var isArray: Bool = false
     private var nextIsName: Bool = false
     private var currentIsName: Bool = false
-
+    
     public init(_ parser: JSONParser<AnySequence<UnicodeScalar>>) {
         self.iter = parser.makeIterator()
     }
-
+    
     /**
      * Main iteration method, which will advance stream enough
      * to determine type of the next token, if any. If none
@@ -58,7 +57,11 @@ public class PMJacksonParser {
             if (isObject) {
                 currentIsName = nextIsName
                 if (currentIsName) {
-                    currentName = event.asString()
+                    switch event {
+                    case .stringValue(let name):
+                        currentName = name
+                    default: fatalError()
+                    }
                 }
                 nextIsName = !nextIsName
             } else {
@@ -67,9 +70,10 @@ public class PMJacksonParser {
                 nextIsName = false
             }
         }
+        currentEvent = event
         return currentEvent
     }
-
+    
     /**
      * Method that will skip all child tokens of an array or
      * object token that the parser currently points to,
@@ -105,10 +109,13 @@ public class PMJacksonParser {
     }
 }
 
-public extension JSONEvent {
-
-   public func asString(_ def: String? = nil) -> String! {
-        switch self {
+public extension PMJacksonParser {
+    
+    public func getValueAsString(_ def: String? = nil) -> String! {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
         case .stringValue(let v):
             return v
         case .booleanValue(let v):
@@ -122,44 +129,98 @@ public extension JSONEvent {
         case .error(let err):
             fatalError(err.description)
         default:
-            fatalError("Unexpected event \(eventType)")
+            fatalError("Unexpected event \(event.eventType)")
         }
     }
-
-    public func asInt64(_ def: Int64? = nil) -> Int64! {
-        switch self {
+    
+    public func getValueAsBoolean(_ def: Bool = false) -> Bool {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
+        case .stringValue(let v):
+            return Bool(v) ?? def
+        case .booleanValue(let v):
+            return v
+        case .int64Value(let v):
+            return v != 0
+        case .doubleValue(let v):
+            return v != 0
+        case .nullValue:
+            return def
+        case .error(let err):
+            fatalError(err.description)
+        default:
+            fatalError("Unexpected event \(event.eventType)")
+        }
+    }
+    
+    public func getValueAsInt32(_ def: Int32 = 0) -> Int32 {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
+        case .stringValue(let v):
+            return Int32(v) ?? def
+        case .booleanValue(let v):
+            return v ? 1 : 0
+        case .int64Value(let v):
+            return Int32(v)
+        case .doubleValue(let v):
+            return Int32(v)
+        case .nullValue:
+            return def
+        case .error(let err):
+            fatalError(err.description)
+        default:
+            fatalError("Unexpected event \(event.eventType)")
+        }
+    }
+    
+    public func getValueAsInt64(_ def: Int64 = 0) -> Int64 {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
         case .stringValue(let v):
             return Int64(v) ?? def
+        case .booleanValue(let v):
+            return v ? 1 : 0
         case .int64Value(let v):
             return v
         case .doubleValue(let v):
             return Int64(v)
         case .nullValue:
-            return nil
+            return def
         case .error(let err):
             fatalError(err.description)
         default:
-            fatalError("Unexpected event \(eventType)")
+            fatalError("Unexpected event \(event.eventType)")
         }
     }
     
-    public func asDouble64(_ def: Double? = nil) -> Double! {
-        switch self {
+    public func getValueAsDouble(_ def: Double = 0.0) -> Double {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
         case .stringValue(let v):
             return Double(v) ?? def
+        case .booleanValue(let v):
+            return v ? 1 : 0
         case .int64Value(let v):
             return Double(v)
         case .doubleValue(let v):
             return v
         case .nullValue:
-            return nil
+            return def
         case .error(let err):
             fatalError(err.description)
         default:
-            fatalError("Unexpected event \(eventType)")
+            fatalError("Unexpected event \(event.eventType)")
         }
     }
-
+    
 }
 
 extension JSONEvent {
