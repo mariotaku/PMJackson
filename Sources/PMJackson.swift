@@ -133,7 +133,7 @@ public extension PMJacksonParser {
         }
     }
     
-    public func getValueAsBoolean(_ def: Bool = false) -> Bool {
+    public func getValueAsBool(_ def: Bool = false) -> Bool {
         guard let event = self.currentEvent else {
             return def
         }
