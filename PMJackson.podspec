@@ -2,9 +2,9 @@ Pod::Spec.new do |s|
   s.name         = "PMJackson"
   s.version      = "1.0.1"
   s.summary      = "Extension for PMJSON to acheieve Jackson-style parsing"
-  s.description  = "PMJSON-JacksonAlike provides a JsonParser like Jackson's parser"
+  s.description  = "PMJackson provides a JsonParser like Jackson's parser"
 
-  s.homepage     = "https://github.com/mariotaku/PMJSON+JacksonAlike"
+  s.homepage     = "https://github.com/mariotaku/PMJackson"
 
   s.license      = "MIT & Apache License, Version 2.0"
 
