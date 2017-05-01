@@ -1,20 +1,20 @@
 import PMJSON
 
 public class PMJacksonParser {
-
-    private var iter: JSONParserIterator<AnyIterator<UnicodeScalar>>
-
-    private(set) var currentEvent: JSONEvent?
-
+    
+    
+    public private(set) var currentEvent: JSONEvent?
+    
     /**
-     * Method that can be called to get the name associated with
-     * the current token: for field names it will
-     * be the same as what `currentEvent.asString()` returns;
+     * Get the name associated with the current token: 
+     * for field names it will be the same as what `currentEvent.asString()` returns;
      * for field values it will be preceding field name;
      * and for others (array values, root-level values) null.
      */
     public private(set) var currentName: String? = nil
-
+    
+    private var iter: JSONParserIterator<AnyIterator<UnicodeScalar>>
+    
     private var isObject: Bool = false
     private var isArray: Bool = false
     private var nextIsName: Bool = false
