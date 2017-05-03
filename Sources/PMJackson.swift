@@ -155,6 +155,28 @@ public extension PMJacksonParser {
         }
     }
     
+    public func getValueAsInt(_ def: Int = 0) -> Int {
+        guard let event = self.currentEvent else {
+            return def
+        }
+        switch event {
+        case .stringValue(let v):
+            return Int(v) ?? def
+        case .booleanValue(let v):
+            return v ? 1 : 0
+        case .int64Value(let v):
+            return Int(v)
+        case .doubleValue(let v):
+            return Int(v)
+        case .nullValue:
+            return def
+        case .error(let err):
+            fatalError(err.description)
+        default:
+            fatalError("Unexpected event \(event.eventType)")
+        }
+    }
+    
     public func getValueAsInt32(_ def: Int32 = 0) -> Int32 {
         guard let event = self.currentEvent else {
             return def

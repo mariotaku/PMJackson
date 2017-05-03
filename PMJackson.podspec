@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PMJackson"
-  s.version      = "1.0.8"
+  s.version      = "1.0.9"
   s.summary      = "Extension for PMJSON to acheieve Jackson-style parsing"
   s.description  = "PMJackson provides a JsonParser like Jackson's com.fasterxml.jackson.core.JsonParser"
 
