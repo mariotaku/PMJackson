@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		22664BA6476B546BF59807F3 /* Pods_PMJackson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257D1B68D7CCB486CC567067 /* Pods_PMJackson.framework */; };
 		9E1B244B1BC73D7600E5BC19 /* PMJackson.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1B24411BC73D7600E5BC19 /* PMJackson.framework */; };
-		CE2A7FBB1EB6E9CA003791F2 /* PMJackson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A7FBA1EB6E9CA003791F2 /* PMJackson.swift */; };
+		CE2A7FBB1EB6E9CA003791F2 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */; };
 		CE2A7FC31EB70D4B003791F2 /* PMJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */; };
+		CE750B451EBB6E59003E6249 /* JsonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE750B441EBB6E59003E6249 /* JsonMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +35,9 @@
 		9E49DEF21C1F9E2F004FDCAD /* LICENSE-MIT */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-MIT"; sourceTree = "<group>"; };
 		9E49DEF31C1F9E2F004FDCAD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9E69BE0B1C6E843D00D92762 /* LICENSE-APACHE */ = {isa = PBXFileReference; lastKnownFileType = text; path = "LICENSE-APACHE"; sourceTree = "<group>"; };
-		CE2A7FBA1EB6E9CA003791F2 /* PMJackson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMJackson.swift; sourceTree = "<group>"; };
+		CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMJSON.framework; path = Pods/../build/Debug/PMJSON/PMJSON.framework; sourceTree = "<group>"; };
+		CE750B441EBB6E59003E6249 /* JsonMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,14 +73,14 @@
 		9E1B24271BC73D1900E5BC19 = {
 			isa = PBXGroup;
 			children = (
-				9E49DEF31C1F9E2F004FDCAD /* README.md */,
-				9E69BE0B1C6E843D00D92762 /* LICENSE-APACHE */,
-				9E49DEF21C1F9E2F004FDCAD /* LICENSE-MIT */,
+				6A8FF57F1BA4E64C34D0FE63 /* Frameworks */,
+				DBCCC0CF08AB97E7A691B1B9 /* Pods */,
+				9E1B24341BC73D3600E5BC19 /* Products */,
 				9E1B24421BC73D7600E5BC19 /* Sources */,
 				9E1B244E1BC73D7600E5BC19 /* Tests */,
-				9E1B24341BC73D3600E5BC19 /* Products */,
-				DBCCC0CF08AB97E7A691B1B9 /* Pods */,
-				6A8FF57F1BA4E64C34D0FE63 /* Frameworks */,
+				9E69BE0B1C6E843D00D92762 /* LICENSE-APACHE */,
+				9E49DEF21C1F9E2F004FDCAD /* LICENSE-MIT */,
+				9E49DEF31C1F9E2F004FDCAD /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +96,9 @@
 		9E1B24421BC73D7600E5BC19 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CE2A7FBA1EB6E9CA003791F2 /* PMJackson.swift */,
 				9E1B24451BC73D7600E5BC19 /* Info.plist */,
+				CE750B441EBB6E59003E6249 /* JsonMapper.swift */,
+				CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -261,7 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2A7FBB1EB6E9CA003791F2 /* PMJackson.swift in Sources */,
+				CE750B451EBB6E59003E6249 /* JsonMapper.swift in Sources */,
+				CE2A7FBB1EB6E9CA003791F2 /* JsonParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

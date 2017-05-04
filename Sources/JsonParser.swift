@@ -1,6 +1,6 @@
 import PMJSON
 
-public class PMJacksonParser {
+public class JsonParser {
     
     public private(set) var currentEvent: JSONEvent?
     
@@ -88,7 +88,7 @@ public class PMJacksonParser {
      * will call `nextEvent` to point to the next
      * available token, if any.
      */
-    @discardableResult public func skipChildren() -> PMJacksonParser {
+    @discardableResult public func skipChildren() -> JsonParser {
         var depth = 0
         if (currentEvent != .objectStart && currentEvent != .arrayStart) {
             return self
@@ -109,7 +109,7 @@ public class PMJacksonParser {
     }
 }
 
-public extension PMJacksonParser {
+public extension JsonParser {
     
     public func getValueAsString(_ def: String? = nil) -> String! {
         guard let event = self.currentEvent else {
