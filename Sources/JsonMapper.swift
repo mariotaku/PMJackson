@@ -5,7 +5,7 @@ public protocol JsonMappable {
 public protocol JsonFieldConverter {
     associatedtype T
     
-    public static func parse(_ parser: JsonParser) -> T!
+    static func parse(_ parser: JsonParser) -> T!
     
 }
 
