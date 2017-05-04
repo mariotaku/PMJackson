@@ -11,11 +11,15 @@ public protocol JsonFieldConverter {
 
 open class JsonMapper<T: JsonMappable> {
     
-    public func parse(_ parser: JsonParser) -> T! {
+    public init() {
+        
+    }
+    
+    open func parse(_ parser: JsonParser) -> T! {
         fatalError("Not implemented")
     }
     
-    public func parseField(_ instance: T, _ fieldName: String, _ parser: JsonParser) {
+    open func parseField(_ instance: T, _ fieldName: String, _ parser: JsonParser) {
         // No-op
     }
     
