@@ -9,7 +9,7 @@ public protocol JsonFieldConverter {
     
 }
 
-public class JsonMapper<T: JsonMappable> {
+open class JsonMapper<T: JsonMappable> {
     
     public func parse(_ parser: JsonParser) -> T! {
         fatalError("Not implemented")
