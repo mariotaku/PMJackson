@@ -12,6 +12,7 @@
 		CE2A7FBB1EB6E9CA003791F2 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */; };
 		CE2A7FC31EB70D4B003791F2 /* PMJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */; };
 		CE750B451EBB6E59003E6249 /* JsonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE750B441EBB6E59003E6249 /* JsonMapper.swift */; };
+		CEBBC8651EE7EACF00043809 /* MapperExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBC8641EE7EACF00043809 /* MapperExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		CE2A7FC21EB70D4B003791F2 /* PMJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PMJSON.framework; path = Pods/../build/Debug/PMJSON/PMJSON.framework; sourceTree = "<group>"; };
 		CE750B441EBB6E59003E6249 /* JsonMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonMapper.swift; sourceTree = "<group>"; };
+		CEBBC8641EE7EACF00043809 /* MapperExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapperExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				9E1B24451BC73D7600E5BC19 /* Info.plist */,
 				CE750B441EBB6E59003E6249 /* JsonMapper.swift */,
 				CE2A7FBA1EB6E9CA003791F2 /* JsonParser.swift */,
+				CEBBC8641EE7EACF00043809 /* MapperExtension.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBBC8651EE7EACF00043809 /* MapperExtension.swift in Sources */,
 				CE750B451EBB6E59003E6249 /* JsonMapper.swift in Sources */,
 				CE2A7FBB1EB6E9CA003791F2 /* JsonParser.swift in Sources */,
 			);

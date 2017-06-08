@@ -111,6 +111,18 @@ public class JsonParser {
 
 public extension JsonParser {
     
+    public func getText() -> String {
+        let event = self.currentEvent!
+        switch event {
+        case .stringValue(let v):
+            return v
+        case .error(let err):
+            fatalError(err.description)
+        default:
+            fatalError("Unexpected event \(event.eventType)")
+        }
+    }
+    
     public func getValueAsString(_ def: String? = nil) -> String! {
         guard let event = self.currentEvent else {
             return def
